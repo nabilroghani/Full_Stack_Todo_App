@@ -9,9 +9,8 @@ const todoRouter = require("./routes/todo.routes");
 const connectDB = require("./config/db");
 
 connectDB();
-
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://frontend-nfazvyxrx-nabil-ahmads-projects-394a5d0b.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
