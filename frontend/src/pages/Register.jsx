@@ -14,7 +14,7 @@ const Register = () => {
     setError("");
     
     try {
-      await axios.post("http://localhost:3000/user/register", formData);
+      await axios.post("https://todo-backend-weld-one.vercel.app/user/register", formData);
       alert("Registration Successful! Now please login.");
       navigate("/login");
     } catch (error) {

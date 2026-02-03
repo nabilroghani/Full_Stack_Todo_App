@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   const fetchTodos = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/todo/get", config);
+      const { data } = await axios.get("https://todo-backend-weld-one.vercel.app/todo/get", config);
       setTodos(data);
     } catch (err) {
       if (err.response?.status === 401) navigate("/login");
