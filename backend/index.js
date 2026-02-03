@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 require("dotenv").config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const userRouter = require("./routes/user.route");
 const todoRouter = require("./routes/todo.routes");
@@ -20,6 +20,8 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/todo", todoRouter);
+
+
 
 app.listen(PORT, () => {
   console.log(`server running on http://localhost:${PORT}`);
