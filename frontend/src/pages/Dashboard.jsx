@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // 1. Backend URL ko yahan define kar dein
-const API_URL = "https://todo-backend-weld-one.vercel.app";
+const API_URL = "http://localhost:3000";
 
 const Dashboard = () => {
   const navigate = useNavigate();

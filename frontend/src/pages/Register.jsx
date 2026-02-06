@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
+const API_URL = "http://localhost:3000";
+
 const Register = () => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -14,7 +16,7 @@ const Register = () => {
     setError("");
     
     try {
-      await axios.post("https://todo-backend-weld-one.vercel.app/user/register", formData);
+      await axios.post(`${API_URL}/user/register`, formData);
       alert("Registration Successful! Now please login.");
       navigate("/login");
     } catch (error) {

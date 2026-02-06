@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
+const API_URL = "http://localhost:3000";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +17,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("https://todo-backend-weld-one.vercel.app/user/login", { email, password });
+      const response = await axios.post(`${API_URL}/user/login`, { email, password });
       
       // Token save karna
       localStorage.setItem("token", response.data.token);
