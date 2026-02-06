@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://todo-backendd-alpha.vercel.app";
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
