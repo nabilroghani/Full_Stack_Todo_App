@@ -2,14 +2,13 @@ const Todo = require("../model/todo.model");
 
 const createTodo = async (req, res) => {
     try {
-        // Destructuring mein wo name use karein jo frontend se aa raha hai
+        /
         const { title, discription, priority, dueData } = req.body; 
 
-        // Console check ke liye (Debug)
-        console.log("User from Token:", req.user); 
+        
 
         const newTodo = await Todo.create({
-            user: req.user.userId, // Login token mein 'userId' tha
+            user: req.user.userId, 
             title,
             discription: discription || "",
             priority: priority || "Medium",
@@ -18,7 +17,7 @@ const createTodo = async (req, res) => {
 
         res.status(201).json(newTodo);
     } catch (error) {
-        console.error("Mongoose Error:", error); // Terminal mein error dekhein
+        console.error("Mongoose Error:", error); 
         res.status(400).json({
             message: "Validation Failed - Task not created",
             error: error.message
